@@ -1,12 +1,3 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
 <style>
   :host {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -310,11 +301,11 @@
   <h2>Commits for {{ repoPath }}</h2>
   <p>Latest first</p>
 
-    <ul>
-      <li *ngFor="let commit of commits | async">
-        {{ commit.commit.message }} (<a href="{{ commit.html_url }}">{{ commit.sha }}</a>)
-      </li>
-    </ul>
+  <ul>
+    <li *ngFor="let commit of commits | async">
+      {{ commit.commit.message }} (<a href="{{ commit.html_url }}">{{ commit.sha }}</a>)
+    </li>
+  </ul>
 
   <!-- Footer -->
   <svg id="clouds" alt="Gray Clouds Background" xmlns="http://www.w3.org/2000/svg" width="2611.084" height="485.677" viewBox="0 0 2611.084 485.677">
