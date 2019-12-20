@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GithubRepoService } from './github-repo.service';
+import { Observable } from 'rxjs'; // TODO would rely on tree shaking
 
 @Component({
   selector: 'app-root',
@@ -8,11 +9,12 @@ import { GithubRepoService } from './github-repo.service';
 })
 export class AppComponent implements OnInit {
   title = 'repo-reflect';
+  commits:Observable<Object>;
 
-  constructor(private userService: GithubRepoService) { }
+  constructor(private repoService: GithubRepoService) { }
 
   ngOnInit() {
-
+    this.commits = this.repoService.getCommits()
   }
 
 }
