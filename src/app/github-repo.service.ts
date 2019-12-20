@@ -6,12 +6,12 @@ import { HttpClient } from '@angular/common/http';
 })
 export class GithubRepoService {
 
-  apiUrl = 'https://api.github.com/repos/ResonAtom/RepoReflect/commits';
+  perPage = 100
 
   constructor(private http: HttpClient) {}
 
-  getCommits() {
-    return this.http.get(`${this.apiUrl}?per_page=100`);
+  getCommits(repoPath:string) {
+    return this.http.get(`https://api.github.com/repos/${repoPath}/commits?per_page=${this.perPage}`);
   }
 
 }

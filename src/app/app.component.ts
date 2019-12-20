@@ -8,13 +8,16 @@ import { Observable } from 'rxjs'; // TODO would rely on tree shaking
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'repo-reflect';
+  repoPath = 'ResonAtom/RepoReflect';
   commits:Observable<Object>;
 
   constructor(private repoService: GithubRepoService) { }
 
   ngOnInit() {
-    this.commits = this.repoService.getCommits()
+    this.commits = this.repoService.getCommits(this.repoPath)
+    this.commits.subscribe(item => {
+      console.log(item);
+    });
   }
 
 }
